@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>FlightSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>Home.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/Error.jsp</location>
+  </error-page>
+  <context-param>
+    <param-name>dbConnString</param-name>
+    <param-value>jdbc:mysql://localhost:3306/flightdb</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbuser</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbpass</param-name>
+    <param-value>skillsinmathematics</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>FlightForm</display-name>
+    <servlet-name>FlightForm</servlet-name>
+    <jsp-file>/FlightForm.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightForm</servlet-name>
+    <url-pattern>/new</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FlightCityPage</display-name>
+    <servlet-name>FlightCityPage</servlet-name>
+    <jsp-file>/FlightFilterCityForm.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightCityPage</servlet-name>
+    <url-pattern>/filtercitypage</url-pattern>
+  </servlet-mapping>
+</web-app>
